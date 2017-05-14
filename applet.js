@@ -1,6 +1,7 @@
 /// <reference path="typings/global.d.ts" />
 /// <reference path="typings/imports.gettext.d.ts" />
-/// <reference path="typings/imports.gi.d.ts" />
+/// <reference path="typings/imports.gi.clutter.d.ts" />
+/// <reference path="typings/imports.gi.st.d.ts" />
 /// <reference path="typings/imports.lang.d.ts" />
 /// <reference path="typings/imports.misc.d.ts" />
 /// <reference path="typings/imports.ui.d.ts" />
@@ -23,8 +24,6 @@ var MyApplet = (function (_super) {
         return _super.call(this, metadata, orientation) || this;
     }
     MyApplet.prototype._init = function (metadata, orientation) {
-        _super.prototype._init.call(this, orientation);
-        this.METADATA = metadata;
         try {
             this.set_applet_icon_path(metadata.path + '/icon.png');
             this.set_applet_tooltip(_("Information about typescript"));

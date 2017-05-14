@@ -1,6 +1,7 @@
 /// <reference path="typings/global.d.ts" />
 /// <reference path="typings/imports.gettext.d.ts" />
-/// <reference path="typings/imports.gi.d.ts" />
+/// <reference path="typings/imports.gi.clutter.d.ts" />
+/// <reference path="typings/imports.gi.st.d.ts" />
 /// <reference path="typings/imports.lang.d.ts" />
 /// <reference path="typings/imports.misc.d.ts" />
 /// <reference path="typings/imports.ui.d.ts" />
@@ -13,17 +14,13 @@ class MyApplet extends imports.ui.applet.IconApplet {
 
     menuManager: imports.ui.popupMenu.PopupMenuManager;
     menu: imports.ui.applet.AppletPopupMenu;
-    METADATA: any;
 
     constructor(metadata, orientation) {
         super(metadata, orientation);
     }
 
+
     _init(metadata, orientation) {
-        super._init(orientation);
-
-        this.METADATA = metadata;
-
         try {
             this.set_applet_icon_path(metadata.path + '/icon.png');
             this.set_applet_tooltip(_("Information about typescript"));
@@ -37,7 +34,6 @@ class MyApplet extends imports.ui.applet.IconApplet {
                 imports.misc.util.spawnCommandLine("cinnamon-settings");
             }));
             this.menu.addMenuItem(item);
-
         }
         catch (e) {
             global.logError(e);
