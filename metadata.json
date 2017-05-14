@@ -1,0 +1,6 @@
+{
+    "dangerous": false, 
+    "description": "Click to click", 
+    "uuid": "ts-applet@electronick.org.ua",
+    "name": "Cinnamon Applet written in TypeScript"
+}
