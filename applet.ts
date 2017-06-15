@@ -19,8 +19,12 @@ class MyApplet extends imports.ui.applet.IconApplet {
         super(metadata, orientation);
     }
 
-
     _init(metadata, orientation) {
+        /*
+         * Call base class _init method
+         * Please note that it is NOT constructor
+         */
+        super._init(orientation);
         try {
             this.set_applet_icon_path(metadata.path + '/icon.png');
             this.set_applet_tooltip(_("Information about typescript"));

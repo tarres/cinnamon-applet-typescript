@@ -24,6 +24,11 @@ var MyApplet = (function (_super) {
         return _super.call(this, metadata, orientation) || this;
     }
     MyApplet.prototype._init = function (metadata, orientation) {
+        /*
+         * Call base class _init method
+         * Please note that it is NOT constructor
+         */
+        _super.prototype._init.call(this, orientation);
         try {
             this.set_applet_icon_path(metadata.path + '/icon.png');
             this.set_applet_tooltip(_("Information about typescript"));
