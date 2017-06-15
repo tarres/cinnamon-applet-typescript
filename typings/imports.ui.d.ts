@@ -5,6 +5,10 @@ declare namespace imports {
     namespace ui {
         namespace applet {
 
+            const enum PopupMenuItemIconType{
+                STANDARD = 0 // TODO Add more
+            }
+
             class Applet {
                 _init(orientation: gi.St.Side, panelHeight?: number, instance_id?: number)
 
@@ -68,6 +72,8 @@ declare namespace imports {
 
         namespace popupMenu {
 
+            import PopupMenuItemIconType = imports.ui.applet.PopupMenuItemIconType;
+
             class PopupMenuManager {
                 constructor(parent:any)
 
@@ -75,13 +81,15 @@ declare namespace imports {
             }
 
             class PopupIconMenuItem {
-                constructor(title: string, something: string, icontype: number)
-                connect(eventName:string, callback:()=>void)
+                constructor(title: string, something: string, icontype: PopupMenuItemIconType)
+                connect(eventName: MenuItemEvent, callback:()=>void)
             }
 
             class PopupMenuSection {
 
             }
+
+            type MenuItemEvent = 'activate'; // TODO Add more events here
         }
     }
 
