@@ -65,6 +65,8 @@ declare namespace imports {
 
                 addMenuItem(menuitem: imports.ui.popupMenu.PopupIconMenuItem)
 
+                removeAll()
+
                 toggle()
             }
 
