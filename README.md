@@ -1,4 +1,5 @@
 # Example applet for Cinnamon and typings
 
-This example is work in progress...
+Forked from MrElectroNick/cinnamon-applet-typescript ...
 
+...and added some more typing informations
